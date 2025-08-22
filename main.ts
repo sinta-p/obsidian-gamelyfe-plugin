@@ -18,18 +18,26 @@ export default class ExamplePlugin extends Plugin {
 
     this.addSettingTab(new ExampleSettingTab(this.app, this));
 	
+
+	// new menu shortcut 
+
+	
 	// menu shortcut
     this.addRibbonIcon("star", "GameLyfe", () => {
-		console.log("Initiate Game!");
 
-		const menu = new Menu();
-		menu.addItem((item) =>
-			item
-			  .setTitle("main")
-			  .onClick(() => {
-				this.app.workspace.getMostRecentLeaf().openFile(this.app.vault.getFileByPath('gamification/whoami.md'))
-			  })
-		  );
+		// new optimised flow 
+		this.app.workspace.getLeaf(true).openFile(this.app.vault.getFileByPath('gamification/whoami.md'))
+
+		// console.log("Initiate Game!");
+
+		// const menu = new Menu();
+		// menu.addItem((item) =>
+		// 	item
+		// 	  .setTitle("main")
+		// 	  .onClick(() => {
+		// 		this.app.workspace.getLeaf(true).openFile(this.app.vault.getFileByPath('gamification/whoami.md'))
+		// 	  })
+		//   );
 
 		// menu.addItem((item) =>
 		// 	item
